@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    
+  }
+
+  body { 
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    
+    
+    
+   
+  }
+
+  .sign-in{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 00px 20px;
+    
+    background:none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height:400px;
+    color:white;
+    margin:0px 0px;
+    
+  }
+  .sign-in h1{
+    display:flex;
+    justify-content: center;
+    
+    border-bottom: 3px solid #4caf50;
+  }
+
+  .text-field{
+    width:100%;
+    overflow: hidden;
+    font-size:30px;
+    padding:8px 0;
+    display: flex;
+    align-items: center;
+    margin:8px 0;
+  }
+  .text-field PersonIcon,LockIcon,VisibilityIcon{
+    margin:0px ;
+    padding:0px ;
+    background: none;
+    
+    /* float:left; */
+    text-align: center;
+    border-bottom: 1px solid;
+
+  }
+  .text-field input{
+    
+    width:100%;
+    border:none;
+    outline:none;
+    background: none;
+    font-size: 60%;
+    margin:10px;
+    border-bottom: 1px solid;
+  }
+
+  button{
+    width:100%;
+    background: none;
+    border:1px solid #4caf50;
+    padding:5px;
+    font-size:100%;
+    cursor:pointer;
+    margin:30px 0px;
+    border-radius: 10px;
+    text-align: center;
+   }
+
+   .quick-sign-in{
+     
+     display: flex;
+     justify-content: space-around;
+     font-size: 40px;
+     
+   }
+   .forgot-password{
+     display:flex;
+     justify-content: flex-end;
+     align-items: center;
+     font-size: 15px;
+     text-decoration:none;
+     border-bottom: none;
+     margin:00px 0px;
+     padding:00px 0px;
+     border:0px;
+    
+   }
+   a{
+     text-decoration: none;
+     color:rgb(159, 192, 241);
+   }
+   a:hover{
+     color:rgb(3, 134, 248);
+   }
+
+   .sign-up{
+     font-size: 15px;
+     display:flex;
+     justify-content: space-between;
+     align-items: center;
+     position :absolute;
+     left:44%;
+     top:73%;
+     margin:0px 0px;
+     padding: 0px 0px;
+     background: none;
+   }
+
+  
+      
+  
+ 
+
+/* 
+input{
+    font-size: 100%;
+    width: 25%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+     color:grey
+} */
+
+/* .button{
+    font-size:90%;
+    background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  
+}
+button:hover{
+    background-color: #45a049;
+} */
