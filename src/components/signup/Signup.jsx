@@ -1,6 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
 import './Signup.css';
+import {useNavigate} from 'react-router-dom';
 function Signup(){
     const [firstname,setFirstname]=useState("");
     const [lastname,setLastname]=useState("");
@@ -9,6 +10,7 @@ function Signup(){
     const [dob,setDob]=useState("");
     const [password,setPassword]=useState("");
     const [confirm_password,setConfirm_password]=useState("");
+    let navigate=useNavigate();
 
     return(
         <>
@@ -43,6 +45,7 @@ function Signup(){
                 <input name="confirm_password" type="text" value={confirm_password} onChange={(e)=>{setConfirm_password(e.target.value)}} placeholder='Confirm Password' required/>
                 </div>
                 
+                <button className='button' type='submit' onClick={()=>navigate("/HomePage")}>Create Account</button>
             </form>
             
         </div>
