@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './homepage.css';
+import './homepage.scss';
 
 function HomePage(props) {
   console.log(props);

@@ -1,10 +1,10 @@
 import React from 'react'
-import './errorpage.css'
+import './errorpage.scss'
 
-function errorpage() {
+function ErrorPage() {
   return (
-    <div>errorpage</div>
+    <div>ErrorPage</div>
   )
 }
 
-export default errorpage
+export default ErrorPage

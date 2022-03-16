@@ -1,53 +1,79 @@
-import React from 'react';
+
+
 import {useState} from 'react';
-import './Signup.css';
-import {useNavigate} from 'react-router-dom';
+
+import './Signup.scss';
+import {BsPerson} from 'react-icons/bs';
+import {FiSmartphone} from 'react-icons/fi';
+import {HiOutlineMail} from 'react-icons/hi';
+
+import {BiLock} from 'react-icons/bi';
+
+// import {useNavigate} from 'react-router-dom';
 function Signup(){
-    const [firstname,setFirstname]=useState("");
-    const [lastname,setLastname]=useState("");
-    const [username,setUsername]=useState("");
-    const [email_id,setEmail_id]=useState("");
-    const [dob,setDob]=useState("");
-    const [password,setPassword]=useState("");
-    const [confirm_password,setConfirm_password]=useState("");
-    let navigate=useNavigate();
+    const initialValues=[{name:"",phone:"",email_id:"",password:"",confirm_password:""}];
+    const [formValues,setFormValues]=useState(initialValues);
+    const [data,setData]=useState();
+    
+
+    const handleSubmit=(event)=>{
+        event.preventDefault();
+        let regData={...formValues};
+        setData([...data],regData);
+        console.log(data)
+        
+        if(formValues.password !== formValues.confirm_password){
+            alert("passwords don't match");
+            return;
+        }
+        
+        setFormValues([{name:"",phone:"",email_id:"",password:"",confirm_password:""}]);
+    }
+    
+    const handleChange= (event)=>{
+       const {name,value}=event.target;
+    
+        setFormValues({...formValues,[name]:value});
+        // console.log(formValues);
+    
+    }
+    
 
     return(
         <>
+        <div className='signup-container'>
         <div className="Signup">
             <h1>Create Account</h1>
-            <form id="signup-form">
+            <form id="signup-form" onSubmit={handleSubmit}>
                 <div className="text-field">
-                <input name="first-name" type="text" value={firstname} onChange={(e)=>{setFirstname(e.target.value)}} placeholder='First Name' required/>
+                <BsPerson/>
+                <input name="first-name" type="text" value={formValues.name} onChange={handleChange} placeholder='Name'  required/>
                 </div>
                 
                 <div className="text-field">
-                <input name="last-name" type="text" value={lastname} onChange={(e)=>{setLastname(e.target.value)}} placeholder='Last Name' required/>
-                </div>
-               
-                <div className="text-field">
-                <input name="username" type="text" value={username} onChange={(e)=>{setUsername(e.target.value)}} placeholder='Username' required/>
+                <FiSmartphone/>
+                <input name="phone" type="text" value={formValues.phone} onChange={handleChange} placeholder='Phone Number' required/>
                 </div>
 
                 <div className="text-field">
-                <input name="first-name" type="text" value={email_id} onChange={(e)=>{setEmail_id(e.target.value)}} placeholder='Email-id' required/>
-                </div>
-
-                <div className="text-field">
-                <input name="dob" type="text" value={dob} onChange={(e)=>{setDob(e.target.value)}} placeholder='Date-of-Birth' required/>
+                <HiOutlineMail/>
+                <input name="email" type="email" value={formValues.email_id} onChange={handleChange} placeholder='Email-id' required/>
                 </div>
                 
                 <div className="text-field">
-                <input name="password" type="text" value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password' required/>
+                <BiLock/>
+                <input name="password" type="password" value={formValues.password} onChange={handleChange} placeholder='Password' pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" title='Password must contain minimum eight characters, at least one letter, one number and one special character'  required/>
                 </div>
 
                 <div className="text-field">
-                <input name="confirm_password" type="text" value={confirm_password} onChange={(e)=>{setConfirm_password(e.target.value)}} placeholder='Confirm Password' required/>
+                <BiLock/>
+                <input name="confirm_password" type="text" value={formValues.confirm_password} onChange={handleChange} placeholder='Confirm Password' pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"  required />
                 </div>
                 
-                <button className='button' type='submit' onClick={()=>navigate("/HomePage")}>Create Account</button>
+                <button className='button' type='submit' >Create Account</button>
             </form>
             
+        </div>
         </div>
         </>
     )

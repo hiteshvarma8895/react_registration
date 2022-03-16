@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import api from '../../API/API'
 
-import './login.css'
+import './Login.scss'
 import {useNavigate,Link} from 'react-router-dom'
-import PersonIcon from '@material-ui/icons/Person';
-import LockIcon from '@material-ui/icons/Lock';
+import {BsPerson} from 'react-icons/bs';
+import {BiLock} from 'react-icons/bi';
 import {FcGoogle} from 'react-icons/fc';
 import {FaFacebook} from 'react-icons/fa';
 import LandingPage from '../landingpage/LandingPage';
@@ -43,36 +43,39 @@ function Login() {
    }
   return (
       <>
-    
+    <div className='login-container'>
+        
         <div className='sign-in'>
                 <h1>Sign-In</h1>
                 <form id='myForm' onSubmit={handleSubmit}>
                
                 <div className='text-field'>
-                <PersonIcon/>
+                <BsPerson/>
                 <input name='Username' type='text' value={username} onChange={(e)=>{setUsername(e.target.value)}} placeholder='Username' required/>
                 </div>
                     
                 <div className='text-field'>
-                <LockIcon/>
+                <BiLock/>
                 <input name='Password' type='password' value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='Password' required></input>
-                {/* <VisibilityIcon/> */}
                 </div>
+                
                 <div className='forgot-password'>
                     <Link to={LandingPage}>Forgot Password?</Link>
-                    </div>
-                
+                </div>
                 
                 <button className='button' type='submit' onClick={()=>navigate("/HomePage")}>Login</button>
             </form>
-            <div className='quick-sign-in'><FcGoogle/><FaFacebook/></div>
+            <div className='quick-sign-in'>
+                <div className='google-sign-in'><FcGoogle/></div>
+                <div className='fb-sign-in'><FaFacebook/></div>
+            </div>
 
-            
         </div>
         <div className='sign-up'>
         <p>Don't have an account? 
-        <Link to="Signup"> Signup here</Link>
+        <Link to="/signup"> Signup here</Link>
         </p>
+        </div>
         </div>
         </>
         
