@@ -1,21 +1,32 @@
 
 .navigation{
-  height: 5vh;
+  height: 5%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
   position: sticky;
+  position: fixed;
+   z-index: 9999;
+
+  .logo-container{
+    display:flex;
+    width:50%;
+    align-items: center;
+    justify-content: center;
+  }
   
   .logo {
     display:flex;
     align-items: center;
+    
     height: 100%;
     width: 70px;
     padding: 25px;
     cursor: pointer;
     font-size: 2em;
     font-family: 'Pacifico',cursive;
+    
   }
    .nav-link-container{
     width: 50%;

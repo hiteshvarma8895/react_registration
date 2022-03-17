@@ -2,13 +2,14 @@ import React from 'react';
 import {Link,Outlet} from 'react-router-dom';
 // import {GrHomeRounded} from 'react-icons/gr';
 import './Navbar.scss';
+import logo from "../../assets/CT-logo.png";
  
 function Navbar() {
  return (
   <>
     <div className='navigation'>
       <Link className='logo-container' to="/">
-      <div className='logo'>Hitesh</div>
+      <div className='logo'> Logo </div>
       </Link>
       
       <div className='nav-link-container'>

@@ -57,7 +57,7 @@ function Signup(){
 
                 <div className="text-field">
                 <HiOutlineMail/>
-                <input name="email" type="email" value={formValues.email_id} onChange={handleChange} placeholder='Email-id' required/>
+                <input name="email" type="email" value={formValues.email_id} onChange={handleChange} placeholder='Email' required/>
                 </div>
                 
                 <div className="text-field">

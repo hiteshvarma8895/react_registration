@@ -7,7 +7,8 @@ import {BsPerson} from 'react-icons/bs';
 import {BiLock} from 'react-icons/bi';
 import {FcGoogle} from 'react-icons/fc';
 import {FaFacebook} from 'react-icons/fa';
-import LandingPage from '../landingpage/LandingPage';
+import Forgotpw from '../forgot-pw/Forgotpw';
+
 
 
 
@@ -16,18 +17,18 @@ import LandingPage from '../landingpage/LandingPage';
 
 function Login() {
     
-    let [username,setUsername]=useState("");
+    let [email_id,setEmai_id]=useState("");
     let [password,setPassword]=useState("");
     let navigate = useNavigate();
     
     let handleSubmit = (e)=>{
         
        e.preventDefault();
-       if(username==='' || password===''){
+       if(email_id==='' || password===''){
            alert('fill everything!!')
            return
        }
-       const form = {username:username,password:password}
+       const form = {username:email_id,password:password}
        // console.log(form);
 
        async function post_req(form){
@@ -51,7 +52,7 @@ function Login() {
                
                 <div className='text-field'>
                 <BsPerson/>
-                <input name='Username' type='text' value={username} onChange={(e)=>{setUsername(e.target.value)}} placeholder='Username' required/>
+                <input name='Email' type='text' value={email_id} onChange={(e)=>{setEmai_id(e.target.value)}} placeholder='Email' required/>
                 </div>
                     
                 <div className='text-field'>
@@ -60,7 +61,7 @@ function Login() {
                 </div>
                 
                 <div className='forgot-password'>
-                    <Link to={LandingPage}>Forgot Password?</Link>
+                    <Link to="/Forgotpw">Forgot Password?</Link>
                 </div>
                 
                 <button className='button' type='submit' onClick={()=>navigate("/HomePage")}>Login</button>

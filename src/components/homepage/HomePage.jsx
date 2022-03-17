@@ -2,10 +2,16 @@
 import React from 'react';
 import './homepage.scss';
 
-function HomePage(props) {
-  console.log(props);
+function HomePage() {
+  
   return (
-    <div>HomePage</div>
+    <>
+    <div className='homepage-container'>
+      <h1>Buy, trade, cryptocurrencies on Cosmic Trades</h1>
+      
+      </div>
+    </>
+    
   )
 }
 
