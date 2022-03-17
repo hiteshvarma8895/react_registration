@@ -7,9 +7,17 @@ function HomePage() {
   return (
     <>
     <div className='homepage-container'>
-      <h1>Buy, trade, cryptocurrencies on Cosmic Trades</h1>
+      <div className='left-container'>
+        <h1 className='text'>Buy, trade cryptocurrencies on Cosmic Trades</h1>
       
+        <div className='search-box'>
+        <input className='search' type="text" placeholder="currencies"></input>
+        <button className='button' >Search</button>
+        </div>
+     
       </div>
+    </div>
+
     </>
     
   )
